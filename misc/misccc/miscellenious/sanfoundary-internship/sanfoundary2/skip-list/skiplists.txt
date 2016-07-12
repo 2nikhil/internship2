@@ -1,0 +1,98 @@
+1. What is a skip list?
+a) a linkedlist with size value in nodes
+b) a linkedlist that allows faster search within an ordered sequence
+c) a linkedlist that allows slower search within an ordered sequence
+d) a tree which is in the form of linked list
+Answer: b
+Explanation: It is a datastructure, which can make search in sorted linked list faster in the same way as binary search tree and sorted array (using binary search) are faster.
+
+2. Consider the 2-level skip list
+
+[[image]]
+
+  How to access 38?
+a) travel 20-30-35-38
+b) travel 20-30-40-38
+c) travel 20-38
+d) travel 20-40-38
+Answer: a
+Explanation: Let us call the nodes 20, 30, 40 as top lines and the nodes between them as normal lines. the advantage of skip lists is we can skip all the elements between the top line elements as required.
+
+3. Skip lists are similar to which of the following datastructure?
+a) stack
+b) heap
+c) binary search tree
+d) balanced binary search tree
+Answer: d
+Explanation: As all elements lesser than the top line elements are placed infront of it and greater ones after it. please refer question for clarity. skip lists have the same asymptotic time complexities as balanced trees.
+
+4.  What is the time complexity improvement of skip lists from linked lists in insertion and deletion?
+a) O(n) to O(logn) where n is number of elements
+b) O(n) to O(1) where n is number of elements
+c) no change
+d) O(n) to O(n^2) where n is number of elements
+
+5. To which datastructure are skip lists similar to in terms of time complexities in worst and best cases?
+a) balanced binary search trees
+b) binary search trees
+c) binary trees
+d) linked lists
+Answer: a
+Explanation: Skip lists are similar to any randomly built binary search tree. a BST is balanced because to avoid skew tree formations in case of sequential input and hence achieve O(logn) in all 3 cases. now skip lists can gurantee that O(logn) complexity for any input.
+
+6. The nodes in a skip list may have many forward references. their number is determined 
+a) probabilistically
+b) randomly
+c) sequentially
+d) orthogonally
+Answer: a
+Explanation: The number of forward references are determined probabilistically, that is why skip list is a probabilistic algorithm.
+
+7. Are the below statements true about skiplists?
+   In a sorted set of elements skip lists can implement the below operations
+   i.given a element find closest element to the given value in the sorted set in O(logn)
+   ii.find the number of elements in the set whose values fall a given range in O(logn)
+a) true
+b) false
+Answer: a
+Explanation: To achieve above operations augment with few additional stuff like partial counts.
+
+8. How to maintain multi-level skip list properties when insertions and deletions are done?
+a) design each level of a multi-level skip list with varied probabilities
+b) that cannot be maintained
+c) rebalancing of lists
+d) reconstruction
+Answer: a
+Explanation: for example consider a 2 level skip list. the level-2 skip list can skip one node on a average and at some places may skip 2 nodes, depending on probabilities. this ensures O(logn)
+
+9. Is a skip list like balanced tree?
+a) true, atleast like a balanced tree with good probabilities
+b) false
+Answer: a
+Explanation: Skip list behaves as a balanced tree with high probability and can be commented as such because nodes with different heights are mixed up evenly.
+
+10. What is indexed skip list?
+a) it stores width of link in place of element
+b) it stores index values
+c) array based linked list
+d) indexed tree
+Answer: a
+Explanation: The width is defined as number of bottom layer links that are being traversed by each of higher layer elements. e.g: for a level-2 skip lists, all level-1 nodes have 1 as width, for level-2 width will be 2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

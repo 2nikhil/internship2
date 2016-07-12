@@ -1,0 +1,71 @@
+package com.mobileiron;
+
+import java.util.Date;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="Assets_info")
+public class Assets_info {
+    private boolean allowed_upgrade;
+    private int mobile_ID;
+    private String asset_number;
+    private String color;
+    private String comments;
+    private String department;
+    private Date date;
+    private String device_type;
+    private String IMEI;
+    private boolean is_head_quarters_device;
+    private String manufacturer;
+    private String MDT_no;
+    private int model_number;
+
+    public int get_mobile_ID() {
+        return this.mobile_ID;
+    }
+
+    public void set_mobile_ID(int mobile_ID) {
+        this.mobile_ID = mobile_ID;
+    }
+
+    @XmlElement
+    public String get_asset_number() {
+        return this.asset_number;
+    }
+
+    public void set_asset_number(String asset_number) {
+        this.asset_number = asset_number;
+    }
+
+    public boolean get_allowed_upgrade() {
+        return this.allowed_upgrade;
+    }
+
+    public void set_allowed_upgrade(boolean allowed_upgrade) {
+        this.allowed_upgrade = allowed_upgrade;
+    }
+
+    public String get_color() {
+        return this.color;
+    }
+
+    public void set_color(String color) {
+        this.color = color;
+    }
+
+    public String get_comments() {
+        return this.comments;
+    }
+
+    public void set_comments(String comments) {
+        this.comments = comments;
+    }
+
+    public String get_department() {
+        return this.department;
+    }
+
+    public void set_department(String department) {
+        this.department = department;
+    }
+}

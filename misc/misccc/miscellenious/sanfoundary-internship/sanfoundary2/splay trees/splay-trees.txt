@@ -1,0 +1,85 @@
+1. What are splay trees ?
+a) self adjusting binary search trees
+b) self adjusting binary trees
+c) a tree with strings
+d) a tree with probability distributions
+Answer: a
+Explanation: Splay trees are height balanced, self adjusting BST's.
+
+2. Which of the following property of splay tree is correct ?
+a) it holds probability usage of the respective sub trees
+b) any sequence of j operations starting from an empty tree with h nodes atmost, takes O(jlogh) time complexity 
+c) sequence of operations with h nodes can take O(logh) time complexity
+d) splay trees are unstable trees
+Answer: b
+Explanation: This is a property of splay tree that ensures faster access. we push the most recently used nodes to top which leads to faster access to recently used values.
+
+3. Why to prefer splay trees ?
+a) easier to program
+b) space efficiency
+c) easier to program and faster access to recently accessed items
+d) quick searching
+Answer: c
+Explanation: Whenever you insert an element or remove or read an element that will be pushed or stored at the top which facilitates easier access or recently used stuff.
+
+4. Is it true that splay trees have O(logn) amortized complexity ?
+a) true
+b) false
+Answer: a
+Explanation: We go with amortized time complexity when we feel that not all operations are worst and some can be efficiently done. in splay trees not all splay operations will lead to O(logn) worst case complexity.
+
+5. What is a splay operation?
+a) moving parent node to down of child
+b) moving a node to root
+c) moving root to leaf
+d) removing leaf node
+Answer: b
+Explanation: Splay trees mainly work using splay operations. wheneve we insert, delete and search for a node we splay the respective nodes to root. we have zig-zag and zig-zig operations.
+
+6. Which of the following options is an application of splay trees ?
+a) cache Implementation 
+b) networks
+c) send values
+d) receive values
+Answer: a
+Explanation: Splay trees can be used for faster access to recently accessed items and hence used for cache implementations.
+
+7. When we have red-black trees and AVL trees that can perform most of operations in logarithmic times, then what is the need for splay trees?
+a) no there is no special usage
+b) In real time it is estimated that 80% access is only to 20% data, hence most used ones must be easily available
+c) redblack and avl are not upto mark
+d) they are just another type of self balancing binary search trees
+Answer: b
+Explanation: May be the stats showing 80-20% may be not accurate, but in real time that is the widely spread scenario seen. If you are into this type of situation, you must choose implementing splay trees.
+
+8. After the insertion operation, is the resultant tree a splay tee?
+ [[picture]]
+a) true
+b) false
+Answer: a
+Explanation: There is a zig-zag and right operation(zig) which gives the right hand side tree. refer splay operations for insertion in splay tree.
+
+9.  What output does the below pseudo code produces?
+    Tree_node function(Tree_node x)
+   {
+    Tree_node y = x.left;
+    x.left = y.right;
+    y.right = x;
+    return y;
+  }
+a) right rotation of subtree
+b) left rotation of subtree
+c) zig-zag operation
+d) zig-zig operation
+Answer: a
+Explanation: When a right rotation is done the parent of the rotating node becomes it's right node and it's child becomes it's left child.
+
+10. What is the disadvantage of using splay trees?
+a) height of a splay tree can be linear when accessing elements in non decreasing order.
+b) splay operations are difficult
+c) no significant disadvantage
+d) splay tree performs unnecessary splay when a node is only being read
+Answer: a
+Explanation: This will be the case after accessing all n elements in non-decreasing order. Since the height of a tree corresponds to the worst-case access time, this means that the actual cost of an operation can be high. However the amortized access cost of this worst case is logarithmic O(log n).
+
+

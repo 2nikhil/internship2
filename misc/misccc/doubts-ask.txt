@@ -1,0 +1,5 @@
+1) can we access mysql from eclipse IDE without using workbench. if yes, how?
+
+2) why frequently null pointer exceptions are occuring
+
+3) why error mark in project explorer at mi_asset_management is not going away

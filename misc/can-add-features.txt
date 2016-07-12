@@ -1,0 +1,48 @@
+1)add sort feature to columns
+2)
+add:--
+
+1)paging
+2)searching with multiple options
+3)registering devices webservice
+
+
+
+
+
+to-be-done
+
+1)catch exceptions
+
+
+5)values are storing as null--look into this issue
+4)redirect after entering to previous page
+6)pagination
+7)efficient way to delete multiple rows in mysql
+
+
+delete-exceptions/features need to be added--
+1)when asset number is not there we cannot delete such since we are taking asset number ------ask him
+   check these exceptions
+
+2)when asset number is same all same asset numbers are being deleted becoz in mysql database  "delete" statement deletes all similar(same) valued things ----ask him
+
+3)delete functionality has to be improved so much..check for corner cases
+
+5)when anyone check box is unchecked select_all checkbox must be unchecked and alos if only one check box is there and is checked..then select_all checkbox must be checked.
+
+6)only few assets are getting deleted when select_all is chosen ---problem found at ajax request--it is not sending quickly thats why once select-all chosen only few deletes and without refreshing again select_all chosen they are getting deleted. but if page is refreshed again same scenario repeated
+
+---in backend autoincrment value is going like 101 102 even when all records were delered and freshly were being inserted (need to initilaized to 0)--(how to make sure it resets to 0 anb starts from there
+
+---post is entering one asset as 2---check
+
+
+
+
+
+update-----
+
+
+
+2)update not working---"put" request in forms not working for only form submission.working from postman

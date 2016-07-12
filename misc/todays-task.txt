@@ -1,0 +1,3 @@
+1)Debug put from form
+
+2) show or redirect to homepage after successful adding or updating assets.

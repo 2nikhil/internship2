@@ -1,0 +1,3 @@
+doubts:
+
+what about variable in js declared without "var" keyword

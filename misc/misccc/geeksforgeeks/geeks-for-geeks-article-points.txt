@@ -1,0 +1,28 @@
+1) In a method with try block, return statement if given only inside try block is not enough. after try also return must be given.
+but if finally block is being used and then if return is placed in try then it is now showing any error symbol.
+
+
+
+2) exception vs sqlexception
+https://www.quora.com/What-is-the-difference-between-handling-exceptions-by-catch-block-directly-parent-class-Exception-and-subclasses-like-ArithmeticException-SQLException-ClassNotFoundException-etc
+
+
+
+3)
+ singleton pattern in jdbc connections
+
+4) splitting the string to next line
+
+5)  private constructor uses
+
+5) nested classes..we cannot create a static outer class
+
+6) creating a class variable in the class itself (as we do in linked list) is it not infinite recursion?
+http://stackoverflow.com/questions/9780742/how-can-a-class-have-a-member-of-its-own-type-isnt-this-infinite-recursion
+
+7)Why must local variables, including primitives, always be initialized in Java?
+http://stackoverflow.com/questions/1560685/why-must-local-variables-including-primitives-always-be-initialized-in-java
+
+8) about import java.util.ResourceBundle package
+
+9)

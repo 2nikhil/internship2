@@ -1,0 +1,139 @@
+1. What is a weight balanced tree ?
+a) A binary tree that stores the sizes of subtrees in nodes
+b) a binary tree with an additional attribute of weight
+c) a height balanced binary tree
+d) a normal binary tree
+Answer: a
+Explanation: Unlike AVL and redblack trees which uses height and color as book keeping information, weight balanced trees use the size of subtrees.
+
+2. What are the applications of weight balanced tree ?
+a) dynamic sets, dictionaries, sequences, maps
+b) heaps
+c) sorting
+d) storing strings
+Answer: a
+Explanation: They are a type of self balancing trees which are mostly used in storing key-value pairs, which is mostly used in functional programming languages. they are very useful for maintaing large sets of ordered objects.
+
+3. A node of a weight balanced tree has
+a) key,left and right pointers, size
+b) key,value
+c) key,size
+d) key
+Answer: a
+Explanation: As a weight balanced tree stores height of the subtrees, we need to use size as an additional attribute to every node. also value(for mappings) may be an optional attribute.
+
+4. The size value of various nodes in a weight balanced tree are
+    leaf - zero
+    internal node - size of it's two children
+    is this true?
+a) true
+b) false
+Answer: a
+Explanation: size of a node k is size[k]=size[k.left]+1+size[k.right] and based on this the weight will be given as weight[k]= size[k]+1.
+
+5. What is the condition for a tree to be weight balanced. where a is factor and n is a node?
+a) weight[n.left] >= a*weight[n] and weight[n.right] >= a*weight[n]
+b) weight[n.left] >= a*weight[n.right] and weight[n.right] >= a*weight[n]
+c) weight[n.left] >= a*weight[n.left] and weight[n.right] >= a*weight[n]
+d) weight[n] is a non zero
+Answer: a
+Explantion: The tree is said to be a-balanced if the condition is satisfied. and 'a' value will be determined during tree formation. large value of 'a' is more effective.
+
+6. What are the operations that can be performed on weight balanced tree?
+a) all basic operations and set intersection, set union and subset test
+b) all basic operations
+c) set intersection, set union and subset test
+d) only insertion and deletion
+Answer: a
+Explanation: The speciality of a weight balanced tree is a part from basic operations we can perform collective operations like set intersection, which helps in rapid prototyping in functional programming languages.
+
+7. Consider a weight balanced tree such that, the number of nodes in the left sub tree is at least half and at most twice the number of nodes in the right sub tree. The maximum possible height (number of nodes on the path from the root to the farthest leaf) of such a tree on k nodes can be described as
+a) log2 n
+b) log4/3 n
+c) log3 n
+d) log3/2 n
+Answer: d
+Explanation: Total number of nodes can be described by the recurrence T(n) = T((n-1)/3)) + T(2(n-1)/3) + 1
+T(1) = 1. height of the tree will be H(n) = H(2/3(n-1)) + 1, H(1). drawing a recurrence tree and the cost at each level is 1 and the height will be log(3/2)n.
+
+8. Why the below pseudo code where x is a value, wt is weight factor and t is root node can't insert?
+WeightBalanceTreeNode insert(int x, int wt, WeightBalanceTreeNode k) :
+        
+           if (k == null)
+                k = new WeightBalanceTreeNode(x, wt, null, null)
+           else if (x < t.element) :
+            
+                k.left = insert (x, wt, k.left)
+                if (k.left.weight < k.weight)
+                    k = rotateWithRightChild (k)
+            
+            else if (x > t.element) :
+            
+                k.right = insert (x, wt, k.right)
+                if (k.right.weight < k.weight)
+                    k = rotateWithLeftChild (k)
+            
+            
+        
+  
+a) when x>t.element rotatewithleftchild must take place and vice versa
+b) the logic is incorrect
+c) the condition for rotating children is wrong
+d) insertion cannot be performed in weight balanced trees
+Answer: a
+Explanation: The rotations of children must be interchanged in the code.
+
+9. What does the below definations convey?
+   i. A binary tree is balanced if for each node it holds that the number of inner nodes in the left subtree and the             number of inner nodes in the right subtree differ by at most 1.
+   ii. A binary tree is balanced if for any two leaves the difference of the depth is at most 1.
+a) weight balanced and height balanced tree definations
+b) height balanced and weight balanced tree definations
+c) definations of weight balanced tree
+d) definations of height balanced tree
+Answer: a
+Explanation: They are the definations of weight and height balanceness. height balanced trees wont convey weight balanceness but opposite can be true.
+
+10. Elements in a tree can be indexed by its position under the ordering of the keys and the ordinal position of an element can be determined, both with good efficiency.
+a) true
+b) false
+Answer: a
+Explanation: In a weight balanced tree we can even store the key information so as to use as a key value pair. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 

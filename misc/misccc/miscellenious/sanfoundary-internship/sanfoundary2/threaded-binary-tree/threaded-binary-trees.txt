@@ -1,0 +1,81 @@
+1. What is a threaded binary tree traversal?
+a. a binary tree traversal using stacks
+b. a binary tree traversal using queues
+c. a binary tree traversal using stacks and queues
+d. a binary tree traversal without using stacks and queues
+Answer: d
+Explanation: This type of tree traversal will not use stack or queue.
+
+2. What are the disadvantages of normal binary tree traversals?
+a. there are many pointers which are null and thus useless
+b. there is no traversal which is efficient
+c. complexity in implementing
+d. improper traversals
+Answer: a
+Explanation: As there are majority of pointers with null value going wasted we use threaded binary trees.
+
+3. What may be the content of a node in threaded binary tree?
+a) leftchild_pointer, left_tag , data, right_tag, rightchild_pointer 
+b) leftchild_pointer, left_tag
+c) leftchild_pointer, left_tag , right_tag, rightchild_pointer 
+d) leftchild_pointer, left_tag , data
+Answer: a
+Explanation: it contains additional 2 pointers over normal binary tree node structure.
+
+4. What are null nodes filled with in a threaded binary tree?
+a) left node with inorder predecessor and right node with inorder successor information
+b) right node with inorder predecessor and left node with inorder successor information
+c) they remain null
+d) some other values randomly
+Answer: a
+Explanation: if preorder or postorder is used then the respective predecessor and successor info is stored.
+
+5. The null left pointer pointing to predecessor and null right pointer pointing to successor. how many types of threaded tree are possible with this convention?
+a) inorder, postorder, preorder
+b) inorder
+c) postorder
+d) preorder
+Answer: a
+Explanation: Those are the three representations of binary threaded trees.
+
+6. What are double and single threaded trees?
+a) when both left, right nodes are having null pointers and only right node is null pointer respectively
+b) having 2 and 1 node
+c) using single and double linked lists
+d) using heaps and priority queues
+Answer: a
+Explanation: they are properties of double and single threaded binary trees respectively.
+
+7. What is wrong with below code for inorder traversal of inorder threaded binary tree:
+   inordertraversal(threadedtreenode root):
+     threadedtreenode q = inorderpredecessor(root)
+      while(q!=root):
+        q=inorderpredecessor(q)
+        print q.data
+a) inordersuccessor instead of inorderpredecessor must be done
+b) code is correct
+c) it is code for post order
+d) it is code for pre order
+Answer: a
+Explanation: Property of inorder threaded binary tree is left node with inorder predecessor and right node with inorder successor information are stored.
+
+8. What is inefficient with the below threaded binary tree picture?
+
+ image
+
+
+a) it has dangling pointers 
+b) nothing inefficient
+c) incorrect threaded tree
+d) space is being used more
+Answer: a
+Explanation: The nodes extreme left and right are pointing to nothing which could be also used efficiently.
+
+
+
+
+
+
+
+
+

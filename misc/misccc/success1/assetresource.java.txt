@@ -1,0 +1,51 @@
+package com.mobileiron;
+
+import com.mobileiron.AssetsDAO;
+import com.mobileiron.Assets_info;
+import java.io.PrintStream;
+import java.util.List;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+@Path(value="/assets")
+public class Assetresources {
+    AssetsDAO dao = new AssetsDAO();
+
+    @GET
+    @Produces(value={"application/json", "application/xml"})
+    public List<Assets_info> findall() {
+        System.out.println("finding everything");
+        return this.dao.find();
+    }
+
+    @POST
+    @Consumes(value={"application/xml"})
+    @Produces(value={"application/xml"})
+    public Assets_info assets_create(Assets_info ai) {
+        System.out.println("creating assets");
+        return this.dao.assets_create(ai);
+    }
+
+    @PUT
+    @Path(value="/assets/{id}")
+    @Consumes(value={"application/json", "application/xml"})
+    @Produces(value={"application/json", "application/xml"})
+    public Assets_info assets_update(Assets_info ai) {
+        System.out.println("updating asset ");
+        return this.dao.assets_update(ai);
+    }
+
+    @DELETE
+    @Path(value="{id}")
+    @Produces(value={"application/json", "application/xml"})
+    public void remove_assets(@PathParam(value="id") int mobile_ID) {
+        System.out.println("deleting the specified");
+        this.dao.assets_delete(mobile_ID);
+    }
+}

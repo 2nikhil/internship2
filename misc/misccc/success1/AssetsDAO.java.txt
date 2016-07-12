@@ -1,0 +1,124 @@
+package com.mobileiron;
+
+import com.mobileiron.Assets_info;
+import com.mobileiron.connectionHelper;
+import java.io.PrintStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class AssetsDAO {
+    Assets_info list;
+
+    public Assets_info assets_create(Assets_info ai) {
+        Connection c = null;
+        System.out.println("success after connection=null");
+        PreparedStatement ps = null;
+        try {
+            try {
+                c = connectionHelper.getconnection();
+                System.out.println("success after gettingconnectionhahahaha");
+                ps = c.prepareStatement("INSERT INTO mi_mobiledevices (mobile_ID,asset_number) VALUES (?,?)", new String[]{"ID"});
+                ps.setInt(1, 2);
+                ps.setString(2, "84897");
+                System.out.println("success before line31 mobileID");
+                System.out.println("success after mobileID");
+                ps.executeUpdate();
+            }
+            catch (SQLException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
+        }
+        finally {
+            connectionHelper.close((Connection)c);
+        }
+        return ai;
+    }
+
+    public void printfun() {
+        System.out.println("yes entered here");
+    }
+
+    public Assets_info assets_update(Assets_info ai) {
+        Connection c = null;
+        PreparedStatement ps = null;
+        try {
+            try {
+                c = connectionHelper.getconnection();
+                ps = c.prepareStatement("UPDATE mi_mobiledevices SET allowed_upgrade_or_not=?, asset_number=?, color=?, comments=?, department=?, device_purchase_date=?, device_type=?, IMEI=?, is_head_quarters_device=?,is_rooted_or_jail_broken_device=?, manufacturer=?, MDT_No=?, model_number=? WHERE asset_id=?");
+                ps.setBoolean(1, ai.get_allowed_upgrade());
+                ps.setString(2, ai.get_asset_number());
+                ps.setString(3, ai.get_color());
+                ps.setString(4, ai.get_comments());
+                ps.executeUpdate();
+            }
+            catch (SQLException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
+        }
+        finally {
+            connectionHelper.close((Connection)c);
+        }
+        return ai;
+    }
+
+    public boolean assets_delete(int mobile_ID) {
+        Connection c = null;
+        try {
+            c = connectionHelper.getconnection();
+            PreparedStatement ps = c.prepareStatement("DELETE FROM mi_mobiledevices where mobile_ID= ?");
+            ps.setInt(1, mobile_ID);
+            int count = ps.executeUpdate();
+            boolean bl = count == 1;
+            return bl;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        finally {
+            connectionHelper.close((Connection)c);
+        }
+    }
+
+    public List<Assets_info> find() {
+        ArrayList<Assets_info> list;
+        list = new ArrayList<Assets_info>();
+        Connection c = null;
+        String sql = "SELECT allowed_upgrade_or_not,asset_number,color FROM mi_mobiledevices";
+        try {
+            try {
+                c = connectionHelper.getconnection();
+                Statement s = c.createStatement();
+                System.out.println("hello after satement creation");
+                ResultSet rs = s.executeQuery(sql);
+                System.out.println("hello after satement execution and into resultset");
+                while (rs.next()) {
+                    list.add(this.processRow(rs));
+                }
+            }
+            catch (SQLException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
+        }
+        finally {
+            connectionHelper.close((Connection)c);
+        }
+        return list;
+    }
+
+    public Assets_info processRow(ResultSet rs) throws SQLException {
+        Assets_info ai = new Assets_info();
+        ai.set_allowed_upgrade(rs.getBoolean("allowed_upgrade_or_not"));
+        ai.set_asset_number(rs.getString("asset_number"));
+        ai.set_color(rs.getString("color"));
+        return ai;
+    }
+}

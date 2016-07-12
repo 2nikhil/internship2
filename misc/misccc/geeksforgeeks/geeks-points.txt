@@ -1,0 +1,7 @@
+1)password in mysql is stored in the form of hashed value and cannot be rehashed (image is in the folder)
+http://stackoverflow.com/questions/4371/how-do-i-retrieve-my-mysql-username-and-password
+
+http://stackoverflow.com/questions/10895163/how-to-find-out-the-mysql-root-password
+
+
+2)
